@@ -495,7 +495,7 @@ def main():
 
     # Ratio M/Riemann
     ratio_MR = rms_M / rms_riem if rms_riem > 0 else float('inf')
-    print(f"\n  M/Riemann ratio (vs Montgomery): {ratio_MR:.3f}x  (cf. L=18: 1.49)")
+    print(f"\n  M/Riemann ratio (vs Montgomery): {ratio_MR:.3f}x  (cf. L=18: 1.44)")
 
     # ==================================================================
     # STEP 4: Correlation hole
@@ -640,7 +640,7 @@ def main():
     print(f"  g(r=0.01): M={g_M_0:.4f}, Riemann={g_riem_0:.4f}, Dedekind={g_ded_0:.4f}")
     print(f"\nCONVERGENCE (all L=30 results):")
     print(f"  KS(GUE):    {ks_M['gue'][0]:.4f}  (cf. L=18: 0.052)")
-    print(f"  RMS/Riem:   {ratio_MR:.3f}  (cf. L=18: 1.49)")
+    print(f"  RMS/Riem:   {ratio_MR:.3f}  (cf. L=18: 1.44)")
 
     # Save summary
     summary_file = RESULTS_DIR / 'analysis27_L30.txt'
