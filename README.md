@@ -17,7 +17,7 @@ This repository contains all computational scripts for Analyses 14–27 of the M
 | Result | Value |
 |--------|-------|
 | GOE -> GUE transition | KS(GUE) = 0.052, p = 0.57 at L = 18, Phi = 1/6 |
-| Montgomery pair correlation | RMS = 0.118 at L = 30 (ratio 1.44x to Riemann zeros) |
+| Montgomery pair correlation | RMS = 0.118 at L = 30; three-layer hierarchy: Riemann (0.082) < GUE null (0.092) < M (0.118) |
 | Dedekind zeta match | M fits zeta_{Q(omega)} 28.4% better than zeta(s) alone |
 | Gate modulation | All 10 values from r = 6, h = 12, n = 5 (zero free parameters) |
 | Route C | alpha^{-1} = 137.036 from E6 integers |
@@ -79,7 +79,7 @@ This repository contains all computational scripts for Analyses 14–27 of the M
 - `L24_convergence.py` — Size scaling L = 12 to L = 30
 - `phi_minimum_check.py` — Bandwidth sensitivity check
 
-**Result**: RMS(M, Montgomery) = 0.118 at L = 30. Phi = 1/6 minimizes RMS. Convergence confirmed.
+**Result**: RMS(M, Montgomery) = 0.118 at L = 30. Convergence confirmed. See Analysis 28 for GUE null baseline and Analysis 29 for phi sweep.
 
 ### Analysis 21: Coherence-Eigenvalue Mapping + Lyapunov
 `analysis_21_coherence_lyapunov/`
@@ -125,6 +125,21 @@ This repository contains all computational scripts for Analyses 14–27 of the M
 - `analysis27_L30.py` — Exact Analysis 20 pipeline + Dedekind comparison at L = 30
 
 **Result**: **M fits Dedekind 28.4% better than Riemann alone.** RMS(M, Dedekind) = 0.0362 vs RMS(M, Riemann) = 0.0506.
+
+### Analysis 28: GUE Null Comparison
+`analysis_28_gue_null/`
+- `gue_null_comparison.py` — **100 random GUE matrices** at each wing size N, same pipeline as Analysis 20. Establishes GUE baseline RMS.
+- `gue_null_wing_check.py` — Validates fairness: full NxN GUE vs positive-wing extraction from larger GUE give identical results (+/-1 sigma).
+- `gue_null_comparison.txt` — Summary results
+
+**Result**: Three-layer hierarchy established. Riemann zeros (RMS = 0.082, -3.2 sigma below GUE) < GUE baseline (0.092 +/- 0.005) < M operator (0.118, +5.5 sigma above). M underperforms generic GUE at every L; non-universal excess from finite Eisenstein torus concentrated in shallow correlation hole (g(0) = 0.438 vs GUE 0.321). Wing extraction fairness confirmed.
+
+### Analysis 29: Phi Sweep (Fine + Ultra-Fine)
+`analysis_29_phi_sweep/`
+- `phi_fine_sweep.py` — 61-point sweep from Phi = 0 to 0.5 at L = 18, 24, 30
+- `phi_ultrafine_sweep.py` — 201-point sweep in [0.12, 0.20] with parabolic interpolation at L = 24, 30
+
+**Result**: Broad minimum in Phi in [0.14, 0.16] with commensurability oscillations (jagged RMS landscape, +/-0.01 between adjacent grid points). No exact fraction lock. Previous claim of minimum at 1/6 or 1/4 were coarse-grid artifacts. Phi = 1/6 is within the broad minimum and architecturally determined by the Eisenstein lattice angle.
 
 ### Cached Data
 `data/`
