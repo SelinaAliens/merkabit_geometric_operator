@@ -17,7 +17,7 @@ This repository contains all computational scripts for Analyses 14–27 of the M
 | Result | Value |
 |--------|-------|
 | GOE -> GUE transition | KS(GUE) = 0.052, p = 0.57 at L = 18, Phi = 1/6 |
-| Montgomery pair correlation | RMS = 0.118 at L = 30 (ratio 1.49x to Riemann zeros) |
+| Montgomery pair correlation | RMS = 0.118 at L = 30 (ratio 1.44x to Riemann zeros) |
 | Dedekind zeta match | M fits zeta_{Q(omega)} 28.4% better than zeta(s) alone |
 | Gate modulation | All 10 values from r = 6, h = 12, n = 5 (zero free parameters) |
 | Route C | alpha^{-1} = 137.036 from E6 integers |
