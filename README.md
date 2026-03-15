@@ -153,13 +153,13 @@ This repository contains all computational scripts for Analyses 14–27 of the M
 The R/R-bar merger operator M on the Eisenstein torus T_L:
 
 ```
-M[i,j] = exp(-|z_i - z_j| / xi) * exp(i * Phi * A_ij) * <u_i | v_j>
+M[i,j] = exp(-|z_i - z_j| / xi) * exp(2*pi*i * A_ij) * <u_i | v_j>
 ```
 
 where:
 - `u(a,b) = exp(i*pi*(a-b)/6) * [cos(pi*r/2), i*sin(pi*r/2)]` (geometric spinor)
 - `v(a,b) = [-conj(u1), conj(u0)]` (SU(2) Hopf antipode)
-- `A_ij = Phi * (2*a_i + da)/2 * db` (Landau gauge, Formula A)
+- `A_ij = Phi * (2*a_i + da)/2 * db` (Landau gauge vector potential, Formula A)
 - `xi = 3` (decay length), `Phi = 1/6` (P-gate flux)
 
 Zero free parameters. Every quantity determined by the Eisenstein lattice geometry and E6 McKay correspondence.
