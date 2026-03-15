@@ -1,0 +1,99 @@
+Analysis 37: GUE Zero Count Fairness Verification
+======================================================================
+GUE trials: 20 per L, seed=2027
+Search window: Im(s) in [0.3, 200.0]
+
+ZERO COUNT FAIRNESS: M vs GUE NULL
+======================================================================
+   L | M_zeros | GUE_mean | GUE_std | GUE_min | Ratio | KS_crit_M | KS_crit_GUE |    Fair?
+------------------------------------------------------------------------------------------
+  18 |     117 |    116.8 |    22.2 |      84 |  1.00 |    0.1988 |      0.1992 |      YES
+  30 |     112 |    115.0 |    14.8 |      91 |  0.97 |    0.2006 |      0.1995 |      YES
+  36 |      94 |    123.4 |    20.2 |     105 |  0.76 |    0.2085 |      0.1969 |      YES
+  37 |     114 |    120.6 |    16.7 |     102 |  0.95 |    0.1999 |      0.1978 |      YES
+  38 |     108 |    115.2 |    13.7 |      97 |  0.94 |    0.2022 |      0.1995 |      YES
+  39 |     111 |    126.5 |    20.3 |     102 |  0.88 |    0.2010 |      0.1960 |      YES
+  42 |     103 |    128.5 |    22.7 |     104 |  0.80 |    0.2043 |      0.1954 |      YES
+  45 |     117 |    124.6 |    16.4 |      97 |  0.94 |    0.1988 |      0.1966 |      YES
+  48 |     111 |    130.3 |    17.3 |     111 |  0.85 |    0.2010 |      0.1948 |      YES
+  54 |     128 |    130.6 |    15.2 |     110 |  0.98 |    0.1954 |      0.1948 |      YES
+  60 |     133 |    135.9 |    19.4 |     110 |  0.98 |    0.1939 |      0.1934 |      YES
+  72 |     121 |    132.8 |    12.0 |     112 |  0.91 |    0.1975 |      0.1942 |      YES
+
+KS POWER MATCHING
+======================================================================
+   L | M_spacings | GUE_mean_sp | KS_crit_M | KS_crit_GUE | Ratio | Power_match?
+--------------------------------------------------------------------------------
+  18 |        116 |       115.8 |    0.1988 |      0.1992 |  1.00 |           OK
+  30 |        111 |       114.0 |    0.2006 |      0.1995 |  0.99 |           OK
+  36 |         93 |       122.4 |    0.2085 |      0.1969 |  0.94 |           OK
+  37 |        113 |       119.6 |    0.1999 |      0.1978 |  0.99 |           OK
+  38 |        107 |       114.2 |    0.2022 |      0.1995 |  0.99 |           OK
+  39 |        110 |       125.5 |    0.2010 |      0.1960 |  0.97 |           OK
+  42 |        102 |       127.5 |    0.2043 |      0.1954 |  0.96 |           OK
+  45 |        116 |       123.6 |    0.1988 |      0.1966 |  0.99 |           OK
+  48 |        110 |       129.3 |    0.2010 |      0.1948 |  0.97 |           OK
+  54 |        127 |       129.6 |    0.1954 |      0.1948 |  1.00 |           OK
+  60 |        132 |       134.9 |    0.1939 |      0.1934 |  1.00 |           OK
+  72 |        120 |       131.8 |    0.1975 |      0.1942 |  0.98 |           OK
+
+GUE TRIALS WITH ZERO/FEW ZEROS
+======================================================================
+  L=18: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=30: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=36: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=37: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=38: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=39: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=42: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=45: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=48: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=54: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=60: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+  L=72: 0/20 trials with 0 zeros, 0/20 with <4 zeros (KS=1.0 placeholder)
+
+SPACING-COUNT-MATCHED Z-SCORES
+======================================================================
+  No L values require spacing-count matching (all ratios < 2.0).
+
+Full comparison (all GUE trials) vs matched (>=50% of M's spacing count):
+   L |  z_all | z_matched | n_matched | n_total | Delta_z
+---------------------------------------------------------
+  18 |   0.84 |      0.84 |        20 |      20 |    0.00
+  30 |  -1.48 |     -1.48 |        20 |      20 |    0.00
+  36 |   0.44 |      0.44 |        20 |      20 |    0.00
+  37 |   0.36 |      0.36 |        20 |      20 |    0.00
+  38 |   0.57 |      0.57 |        20 |      20 |    0.00
+  39 |   1.56 |      1.56 |        20 |      20 |    0.00
+  42 |   3.01 |      3.01 |        20 |      20 |    0.00
+  45 |   1.20 |      1.20 |        20 |      20 |    0.00
+  48 |  -0.35 |     -0.35 |        20 |      20 |    0.00
+  54 |  -0.27 |     -0.27 |        20 |      20 |    0.00
+  60 |   2.40 |      2.40 |        20 |      20 |    0.00
+  72 |  -0.24 |     -0.24 |        20 |      20 |    0.00
+
+  Mean z (all trials):     +0.671
+  Mean z (matched trials): +0.671
+
+======================================================================
+VERDICT
+======================================================================
+  VERDICT A:
+  FAIR: GUE zero counts are comparable to M at all L values.
+  All M/GUE ratios < 2.0. KS power is matched.
+  The Analysis 36 negative result stands WITHOUT qualification.
+  M's spectral zeta zero spacings are consistent with the GUE null
+  (Fisher p=0.954), and this comparison had matched statistical
+  power on both sides.
+
+======================================================================
+AUDIT CLOSURE
+======================================================================
+  This analysis closes the methodological audit window on Analysis 36.
+  The spectral zeta investigation (Analyses 30-37) is now complete.
+  
+  Final scorecard:
+    STANDING: GUE universality, Montgomery pair correlation, bounded spectrum
+    KILLED:   Riemann height alignment (An.34), spacing match (An.36),
+              critical line convergence (An.36), unbounded spectrum (An.35)
+    VERIFIED: GUE null test fairness (An.37 - this analysis)
