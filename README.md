@@ -176,9 +176,5 @@ numpy, scipy, matplotlib, mpmath (for high-precision zeros)
 
 ## Citation
 
-Stenberg, S. (2026). *Geometric Operator on the Eisenstein Lattice Converges to GUE Eigenvalue Statistics Under P-Gate Magnetic Flux*. The Merkabit Riemann Spectral Program — Paper 6.
+Stenberg, S. (2026). *Geometric Operator on the Eisenstein Lattice: GUE Classification, Bounded Spectrum, and the Merkabit as Irreducible Unit — Paper 6.
 
-See also:
-- [1] Stenberg, S. (2026). The Merkabit. Zenodo, DOI: 10.5281/zenodo.18925475
-- [2] Stenberg, S. (2026). alpha = 4/3 universally. Zenodo, DOI: 10.5281/zenodo.18980026
-- [3] Stenberg, S. (2026). Fine structure constant from geometry. Zenodo, DOI: 10.5281/zenodo.18981288
