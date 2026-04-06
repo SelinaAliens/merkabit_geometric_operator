@@ -1,0 +1,429 @@
+kcp_version: '0.14'
+project: 'Paper 6: Geometric Operator on the Eisenstein Lattice'
+description: >
+  The Merkabit Riemann Spectral Program. Central object is the R/R-bar merger operator M from geometric SU(2) Hopf-paired
+  spinors on the Eisenstein lattice Z[omega]. The operator M under P-gate magnetic flux insertion converges to GUE eigenvalue
+  statistics, providing a geometric spectral approach to the Riemann Hypothesis. Authors: Selina Stenberg with Claude Anthropic,
+  March 2026.
+version: '1.0'
+created: '2026-04-06'
+maintainer: Selina Stenberg
+units:
+- id: readme
+  path: README.md
+  intent: >
+    Entry point for Paper 6. Overview of the R/R-bar merger operator M, the Eisenstein lattice Z[omega], P-gate flux insertion,
+    and GUE convergence result.
+  scope: global
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - GUE
+  - Riemann zeros
+  - P-gate
+  - Eisenstein operator
+  - magnetic flux
+  - Eisenstein lattice
+  hints:
+    load_strategy: eager
+    token_estimate: 400
+    priority: critical
+- id: manuscript
+  path: Paper_6.docx
+  intent: >
+    Full manuscript for Paper 6. Lazy-loaded due to size; consult for theoretical derivations, proofs, and narrative context.
+  scope: project
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - manuscript
+  - paper
+  - full text
+  hints:
+    load_strategy: lazy
+    token_estimate: 1500
+    priority: critical
+- id: generate_figures
+  path: generate_paper_figures.py
+  intent: Generates all figures for Paper 6. Run to reproduce plots from manuscript.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: reference
+- id: analysis_14_riemann_zeros
+  path: analysis_14_riemann_zeros/rr_bar_riemann_analysis.py
+  intent: >
+    Core Riemann zero analysis with P-gate flux. Primary scripts: rr_bar_riemann_analysis.py (main), rr_bar_refined_analysis.py
+    (refinement), peierls_flux_sweep.py (flux sweep). Establishes GUE convergence of operator M.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - GUE
+  - Riemann zeros
+  - P-gate
+  - Eisenstein operator
+  - magnetic flux
+  - rr_bar
+  hints:
+    load_strategy: eager
+    priority: critical
+- id: analysis_15_tunnel_operator
+  path: analysis_15_tunnel_operator/tunnel_operator_simulation.py
+  intent: >
+    Quantum tunnel operator simulation. Explores tunnelling dynamics of the merger operator M on the Eisenstein lattice.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_16_eisenstein_spectral
+  path: analysis_16_eisenstein_spectral/full_eisenstein_spectral.py
+  intent: >
+    Full spectral analysis on the Eisenstein lattice. Computes eigenvalue distribution of operator M across the full lattice.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - GUE
+  - Riemann zeros
+  - Eisenstein operator
+  - spectral
+  hints:
+    load_strategy: eager
+    priority: critical
+- id: analysis_20_montgomery
+  path: analysis_20_montgomery/montgomery_comparison.py
+  intent: >
+    Montgomery pair correlation comparison against GUE predictions. Primary: montgomery_comparison.py. Also: L24_convergence.py,
+    phi_minimum_check.py.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Montgomery
+  - GUE
+  - pair correlation
+  hints:
+    load_strategy: eager
+    priority: critical
+- id: analysis_32_montgomery_L38
+  path: analysis_32_montgomery_L38/montgomery_L38.py
+  intent: Montgomery pair correlation at L=38 truncation.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Montgomery
+  - GUE
+  - pair correlation
+  hints:
+    load_strategy: eager
+    priority: critical
+- id: analysis_19b_commensurability
+  path: analysis_19b_commensurability/commensurability_final.py
+  intent: >
+    Commensurability of flux values. Primary: commensurability_final.py. Also: commensurability_cascade.py, commensurability_geometric.py,
+    commensurability_test.py.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_19_peierls_flux
+  path: analysis_19_peierls_flux/peierls_flux.py
+  intent: >
+    Peierls flux insertion analysis. Direct computation of flux-dependent spectral modifications to operator M.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_22_e6_projection
+  path: analysis_22_e6_projection/e6_root_projection_v2.py
+  intent: >
+    E6 root system projection onto the Eisenstein spectral structure. Primary: e6_root_projection_v2.py. Also: e6_root_projection.py,
+    affine_a4_modulation.py.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - E6
+  - root system
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_23_e6_a4_eigenspace
+  path: analysis_23_e6_a4_eigenspace/analysis23_projection.py
+  intent: >
+    E6/A4 eigenspace analysis. Projects operator M eigenvalues onto E6/A4 substructure.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - E6
+  - A4
+  - eigenspace
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_24_z3_sublattice
+  path: analysis_24_z3_sublattice/analysis24_z3_action.py
+  intent: Z3 sublattice action on the Eisenstein lattice.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_26_dedekind_L18
+  path: analysis_26_dedekind_L18/analysis26_dedekind_comparison.py
+  intent: Dedekind L-function comparison at L=18 truncation.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Dedekind
+  - L-function
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_27_dedekind_L30
+  path: analysis_27_dedekind_L30/analysis27_L30.py
+  intent: Dedekind L-function analysis at L=30 truncation.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Dedekind
+  - L-function
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_30_dedekind_L42
+  path: analysis_30_dedekind_L42/dedekind_convergence.py
+  intent: Dedekind L-function convergence analysis at L=42 truncation.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - Dedekind
+  - L-function
+  - convergence
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_28_gue_null
+  path: analysis_28_gue_null/gue_null_comparison.py
+  intent: >
+    GUE null hypothesis test. Primary: gue_null_comparison.py. Also: gue_null_wing_check.py.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - null hypothesis
+  - GUE test
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_34_gue_null_zeta
+  path: analysis_34_gue_null_zeta/analysis_34_null_test.py
+  intent: GUE null hypothesis test applied to spectral zeta function zeros.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - null hypothesis
+  - GUE test
+  - zeta
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_36_spacing_null
+  path: analysis_36_spacing_null/analysis_36_spacing_null.py
+  intent: Spacing null hypothesis test for eigenvalue level statistics.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  triggers:
+  - null hypothesis
+  - GUE test
+  - spacing
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_29_phi_sweep
+  path: analysis_29_phi_sweep/phi_ultrafine_sweep.py
+  intent: >
+    Fine and ultrafine sweep over flux parameter phi. Primary: phi_ultrafine_sweep.py. Also: phi_fine_sweep.py.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_33_spectral_zeta
+  path: analysis_33_spectral_zeta/spectral_zeta_zeros.py
+  intent: Spectral zeta function zeros derived from operator M on the Eisenstein lattice.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_21_coherence_lyapunov
+  path: analysis_21_coherence_lyapunov/coherence_eigenvalue_mapping.py
+  intent: >
+    Coherence and Lyapunov exponent analysis. Primary: coherence_eigenvalue_mapping.py. Also: cascade_phase_portrait.py.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_31_gue_boundary
+  path: analysis_31_gue_boundary/gue_boundary_scan.py
+  intent: 'GUE boundary scan. Also: dedekind_L18.py (Dedekind check at this boundary).'
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_17_tesseract
+  path: analysis_17_tesseract/tesseract_M_spectral.py
+  intent: Operator M spectral analysis on tesseract geometry.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_18_lchi3
+  path: analysis_18_lchi3/lchi3_comparison.py
+  intent: L-function chi3 comparison against operator M spectral data.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_25_euler_product
+  path: analysis_25_euler_product/analysis25_eisenstein_euler.py
+  intent: Euler product construction on the Eisenstein lattice.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: supplementary
+- id: analysis_35_stress_test
+  path: analysis_35_stress_test/analysis_35_stress_test.py
+  intent: Stress test for operator M spectral computation under extreme parameters.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: reference
+- id: analysis_37_fairness
+  path: analysis_37_fairness/analysis_37_fairness.py
+  intent: >
+    Fairness metric for GUE comparison. Tests for bias in the null hypothesis acceptance criteria.
+  scope: module
+  audience:
+  - human
+  validated: '2026-04-06'
+  hints:
+    load_strategy: lazy
+    priority: reference
+relationships:
+- from: analysis_14_riemann_zeros
+  to: readme
+  type: implements
+- from: analysis_16_eisenstein_spectral
+  to: analysis_14_riemann_zeros
+  type: extends
+- from: analysis_20_montgomery
+  to: analysis_14_riemann_zeros
+  type: validates
+- from: analysis_32_montgomery_L38
+  to: analysis_20_montgomery
+  type: extends
+- from: analysis_28_gue_null
+  to: analysis_14_riemann_zeros
+  type: validates
+- from: analysis_34_gue_null_zeta
+  to: analysis_33_spectral_zeta
+  type: validates
+- from: analysis_36_spacing_null
+  to: analysis_28_gue_null
+  type: extends
+- from: analysis_29_phi_sweep
+  to: analysis_19_peierls_flux
+  type: extends
+- from: analysis_19b_commensurability
+  to: analysis_19_peierls_flux
+  type: extends
+- from: analysis_22_e6_projection
+  to: analysis_16_eisenstein_spectral
+  type: uses
+- from: analysis_23_e6_a4_eigenspace
+  to: analysis_22_e6_projection
+  type: extends
+- from: analysis_26_dedekind_L18
+  to: analysis_14_riemann_zeros
+  type: validates
+- from: analysis_27_dedekind_L30
+  to: analysis_26_dedekind_L18
+  type: extends
+- from: analysis_30_dedekind_L42
+  to: analysis_27_dedekind_L30
+  type: extends
+- from: analysis_31_gue_boundary
+  to: analysis_28_gue_null
+  type: extends
+- from: analysis_33_spectral_zeta
+  to: analysis_16_eisenstein_spectral
+  type: derived_from
+- from: analysis_35_stress_test
+  to: analysis_16_eisenstein_spectral
+  type: validates
+- from: analysis_37_fairness
+  to: analysis_28_gue_null
+  type: validates
+- from: generate_figures
+  to: manuscript
+  type: produces_for
